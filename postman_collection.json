@@ -13,14 +13,7 @@
 			},
 			"request": {
 				"method": "GET",
-				"header": [
-					{
-						"key": "profile_id",
-						"value": "1",
-						"description": "Fake Auth Handler for Deel BE Task",
-						"type": "text"
-					}
-				],
+				"header": [],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n    \"message\": \"hello\",\r\n    \"categories\": [\"Movies\"]\r\n}",
