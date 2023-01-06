@@ -11,6 +11,10 @@ npm run seed
 npm run dev
 ```
 
+## Documentation
+
+https://documenter.getpostman.com/view/250377/2s8Z73yWEG
+
 ## Info and Considerations
 
 1. New Channels can be easily created by extending the BaseChannel and implementing a _send method

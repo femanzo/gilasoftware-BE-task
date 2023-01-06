@@ -49,13 +49,7 @@
 			"name": "Update user subscriptions",
 			"request": {
 				"method": "PATCH",
-				"header": [
-					{
-						"key": "user_id",
-						"value": "1",
-						"type": "text"
-					}
-				],
+				"header": [],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n    \"userId\": 1, \r\n    \"categories\": [\"Finance\", \"Movies\"]\r\n}",
