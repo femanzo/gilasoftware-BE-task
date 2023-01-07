@@ -1,6 +1,7 @@
 import { describe, expect, test } from '@jest/globals'
 
 import { notificationServices } from '../'
+import { getChannelByName } from '../notification-services'
 
 const { createNotification } = notificationServices
 
@@ -26,5 +27,11 @@ describe('Notification Service', () => {
       expect(logs.length).toBeGreaterThan(0)
       expect(logs[0]).toHaveProperty('status', 'sending')
     })
+  })
+
+  test('getChannelByName', async () => {
+    const channel = getChannelByName('sms')
+    expect(channel).toHaveProperty('name', 'sms')
+    expect(channel).not.toHaveProperty('name', 'email')
   })
 })

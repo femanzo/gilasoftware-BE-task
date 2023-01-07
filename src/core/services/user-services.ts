@@ -39,6 +39,8 @@ export const updateUserSettings = async (
 
   await user.$set('subscribed', categories)
   await user.$set('channels', channels)
+  await user.$get('subscribed')
+  await user.$get('channels')
 
-  return await user.$get('subscribed')
+  return user
 }
