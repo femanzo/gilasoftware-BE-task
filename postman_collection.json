@@ -45,7 +45,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userId\": 1, \r\n    \"categories\": [\"Finance\", \"Movies\"]\r\n}",
+					"raw": "{\r\n    \"userId\": 1, \r\n    \"categories\": [\"Finance\", \"Movies\"],\r\n    \"channels\": [\"sms\"]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -53,15 +53,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3001/user/subscribe",
+					"raw": "http://localhost:3001/user",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3001",
 					"path": [
-						"user",
-						"subscribe"
+						"user"
 					]
 				}
 			},
@@ -99,23 +98,11 @@
 		},
 		{
 			"name": "Notification Logs",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"message\": \"hello\",\r\n    \"categories\": [\"Movies\"]\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://localhost:3001/admin/notification",
+					"raw": "http://localhost:3001/admin/notification/logs",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -123,7 +110,8 @@
 					"port": "3001",
 					"path": [
 						"admin",
-						"notification"
+						"notification",
+						"logs"
 					]
 				}
 			},
