@@ -1,4 +1,4 @@
-import { User, Category } from '../models'
+import { User, Category, Channel } from '../models'
 
 export const getUsers = async () => {
   const users = await User.findAll({
@@ -15,22 +15,30 @@ export const getUsers = async () => {
   return users
 }
 
-export const updateCategorySubscription = async (
+export const updateUserSettings = async (
   userId: number,
-  categoryNames: string[]
+  categoryNames: string[],
+  channelNames: string[]
 ) => {
   const user = await User.findByPk(userId)
-  const category = await Category.findAll({
+  const categories = await Category.findAll({
     where: {
       name: categoryNames,
     },
   })
 
-  if (!user || !category) {
-    throw new Error('User or category not found')
+  const channels = await Channel.findAll({
+    where: {
+      name: channelNames,
+    },
+  })
+
+  if (!user || !categories || !channels) {
+    throw new Error('User, category or channel not found')
   }
 
-  await user.$set('subscribed', category)
+  await user.$set('subscribed', categories)
+  await user.$set('channels', channels)
 
   return await user.$get('subscribed')
 }

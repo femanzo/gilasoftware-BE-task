@@ -99,6 +99,8 @@ export const getNotificationsLogs = async () => {
         attributes: ['name'],
       },
     ],
+
+    order: [['createdAt', 'DESC']],
   })
 }
 
